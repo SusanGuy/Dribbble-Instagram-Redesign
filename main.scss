@@ -1,0 +1,402 @@
+$dark-black: #282a34;
+$light-black: #3c3f51;
+$pink: #e2336b;
+$yellow: #fcac46;
+$grey: #a89e9e;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  box-sizing: border-box;
+  background-color: rgb(151, 150, 150);
+  color: #fff;
+}
+
+.dot {
+  position: absolute;
+  width: 0.3rem;
+  height: 0.3rem;
+
+  border-radius: 50%;
+}
+
+.avatar-image {
+  padding: 0.2rem;
+  object-fit: cover;
+  width: 30%;
+  border-radius: 50%;
+
+  border: solid 0.3rem transparent;
+  background-image: linear-gradient(white, white),
+    radial-gradient(circle at 107% 30%, $yellow 50%, #fd5949 10%, #d6249f 75%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.home {
+  display: flex;
+  padding: 2% 20%;
+
+  .main-home {
+    display: flex;
+    width: 100%;
+    background-color: $dark-black;
+    border-radius: 1.2rem;
+
+    .home-left {
+      display: flex;
+      flex-direction: column;
+      padding: 2%;
+
+      .main-logo {
+        display: flex;
+        justify-content: start;
+        .instagram-logo {
+          width: 5rem;
+          height: 5rem;
+          i {
+            background: radial-gradient(
+              circle at 30% 107%,
+              #fdf497 0%,
+              #fdf497 5%,
+              #fd5949 45%,
+              #d6249f 60%,
+              #285aeb 90%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 5rem;
+          }
+        }
+
+        img {
+          object-fit: cover;
+          margin-left: 1rem;
+          height: 6rem;
+        }
+      }
+      .user-info {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3rem;
+        align-items: center;
+
+        span {
+          margin-top: 1rem;
+        }
+
+        .name {
+          font-size: 1.7rem;
+        }
+
+        .handle {
+          color: #909090;
+          font-size: 1.2rem;
+        }
+      }
+
+      .posts-info {
+        margin-top: 3rem;
+        display: flex;
+        justify-content: space-between;
+
+        .vertical {
+          width: 0.1rem;
+          background-color: $grey;
+          opacity: 0.3;
+        }
+
+        .posts {
+          display: flex;
+          flex-direction: column;
+
+          .stat {
+            margin: 0 auto;
+            font-size: 1.5rem;
+          }
+
+          .info {
+            margin-top: 0.4rem;
+            font-size: 1.2rem;
+            color: $grey;
+          }
+        }
+      }
+
+      .options {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+
+        .option:not(:first-child),
+        .horiz {
+          margin-top: 2rem;
+        }
+
+        .horiz {
+          height: 0.1rem;
+          opacity: 0.3;
+          background-color: $grey;
+        }
+
+        .option {
+          display: flex;
+          font-size: 1.5rem;
+
+          .icon-text {
+            margin-left: 2rem;
+          }
+          .item-count {
+            margin-left: auto;
+            color: $grey;
+          }
+        }
+
+        .focused {
+          i {
+            background-image: radial-gradient(
+              circle at 107% 30%,
+              $yellow 50%,
+              #fd5949 10%,
+              #d6249f 75%
+            );
+            background-clip: text;
+            color: transparent;
+          }
+        }
+      }
+    }
+
+    .home-right {
+      display: flex;
+      flex-direction: column;
+      background-color: $light-black;
+      padding: 2% 4%;
+      border-radius: 1.2rem;
+
+      .nav-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .search-bar {
+          position: relative;
+
+          input {
+            border-radius: 0.5rem;
+            border: none;
+            background: #595b66;
+
+            width: 24rem;
+            height: 4rem;
+            color: $grey;
+            text-indent: 3.3rem;
+            font-size: 1.4rem;
+          }
+
+          i {
+            position: absolute;
+            font-size: 1.4rem;
+            left: 1rem;
+            top: 1.3rem;
+          }
+        }
+
+        .nav-right {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .hero {
+            position: relative;
+
+            .dot {
+              right: -0.5rem;
+              top: -0.5rem;
+              background-color: $pink;
+            }
+            span {
+              font-size: 2rem;
+            }
+          }
+
+          .hero:not(:first-child),
+          button {
+            margin-left: 4rem;
+          }
+
+          .btn {
+            border: none;
+            padding: 1.2rem;
+            border-radius: 0.6rem;
+            background: linear-gradient(to right, $pink, $yellow);
+            color: inherit;
+            font-size: 1.2rem;
+
+            i {
+              background: transparent;
+              margin-right: 1rem;
+            }
+          }
+        }
+      }
+
+      .stories {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3rem;
+
+        &-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          &--options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            span:last-of-type {
+              margin-left: 1rem;
+              font-size: 1.2rem;
+            }
+
+            span:first-child {
+              font-size: 1.7rem;
+            }
+          }
+        }
+
+        &-content {
+          margin-top: 1.5rem;
+          display: flex;
+
+          .your-image::before {
+            content: "";
+            background: red;
+          }
+
+          .avatar-image:not(:first-child) {
+            margin-left: 1.1rem;
+          }
+        }
+      }
+
+      .feed {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3rem;
+        &-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          &--options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .option {
+              position: relative;
+              span:first-child {
+                font-size: 1.2rem;
+              }
+
+              span:first-of-type {
+                margin-left: 1.2rem;
+              }
+
+              .dot {
+                background: #fff;
+                bottom: -1.5rem;
+                right: 1.5rem;
+              }
+            }
+
+            .option:last-of-type {
+              span {
+                color: #a89e9e;
+              }
+            }
+          }
+        }
+
+        &-content {
+          margin-top: 2rem;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.5rem;
+
+          .column {
+            display: flex;
+            flex-direction: column;
+
+            .image-container {
+              display: flex;
+              flex-direction: column;
+
+              &:not(:first-child) {
+                margin-top: 2.2rem;
+              }
+
+              .main-image {
+                width: 100%;
+                object-fit: cover;
+                border-radius: 1rem;
+              }
+
+              .image-footer {
+                margin-top: 1.5rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 1.2rem;
+
+                .image-info {
+                  display: flex;
+                  align-items: center;
+
+                  span {
+                    margin-left: 1rem;
+                  }
+
+                  .avatar-image {
+                    width: 15%;
+                    border: 0.1rem;
+                  }
+                }
+
+                &-left {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+
+                  .love,
+                  .comment {
+                    display: flex;
+
+                    span:last-of-type {
+                      margin-left: 0.7rem;
+                    }
+                  }
+
+                  .comment {
+                    margin-left: 1.5rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
